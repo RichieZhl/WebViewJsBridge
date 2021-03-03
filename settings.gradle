@@ -1,3 +1,4 @@
+include ':JsBridge1'
 include ':JSBridge'
 include ':app'
 rootProject.name = "WebViewJsBridge"

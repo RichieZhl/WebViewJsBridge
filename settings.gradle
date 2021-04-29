@@ -1,4 +1,4 @@
-include ':JsBridge1'
+include ':ChromeJsBridge'
 include ':JSBridge'
 include ':app'
 rootProject.name = "WebViewJsBridge"

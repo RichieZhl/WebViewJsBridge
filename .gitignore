@@ -36,6 +36,8 @@ DerivedData
 Example/Pods
 Example/Podfile.lock
 
+.idea/*
+
 # Bundler
 .bundle
 

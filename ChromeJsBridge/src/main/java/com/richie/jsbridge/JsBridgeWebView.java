@@ -18,6 +18,7 @@ public class JsBridgeWebView extends WebView {
 
     private JsBridgeInterface jsBridgeInterface;
 
+    private String mNamespace;
     private String customInjectedJs;
 
     private BridgeWebViewHandler bridgeWebViewHandler;
@@ -122,6 +123,7 @@ public class JsBridgeWebView extends WebView {
                 if (var2 >= 20 && !loaded) {
                     loaded = true;
                     evaluateJavascript(JsBridgeInterface.JAVASCRIPT_STR + JsBridgeInterface.WVJB_JS, null);
+                    evaluateJavascript(JsBridgeInterface.JAVASCRIPT_STR + String.format(JsBridgeInterface.PRO_JS, JsWidgetCollections.getInstance().gen(mNamespace)), null);
                     if (customInjectedJs != null) {
                         evaluateJavascript(JsBridgeInterface.JAVASCRIPT_STR + customInjectedJs, null);
                     }
@@ -136,19 +138,21 @@ public class JsBridgeWebView extends WebView {
         });
     }
 
-    public void setUp(Activity activity, String customInjectedJs) {
+    public void setUp(Activity activity, String namespace, String customInjectedJs) {
         if (jsBridgeInterface != null) {
             return;
         }
+        this.mNamespace = namespace;
         this.customInjectedJs = customInjectedJs;
 
         privateSetWebChromeClient();
 
-        setVerticalScrollBarEnabled(false);
-        setHorizontalScrollBarEnabled(false);
-
         WebSettings settings = getSettings();
         settings.setJavaScriptEnabled(true);
+        settings.setDomStorageEnabled(true);
+        if (BuildConfig.DEBUG) {
+            WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG);
+        }
 
         JsBridgeInterface jsBridgeInterface = new JsBridgeInterface(this, activity);
         addJavascriptInterface(jsBridgeInterface, "Android");

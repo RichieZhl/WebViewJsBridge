@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SuppressLint("JavascriptInterface")
-public class JsBridgeInterface {
+class JsBridgeInterface {
     private final static String CALLBACK_ID_FORMAT = "JAVA_CB_%s";
     private final static String UNDERLINE_STR = "_";
     private final static String JS_HANDLE_MESSAGE_FROM_JAVA = "javascript:JsBridge._handleMessageFromNative('%s');";
@@ -169,12 +169,13 @@ public class JsBridgeInterface {
                     "\t\t\tif (!responseCallback) {\n" +
                     "\t\t\t\treturn;\n" +
                     "\t\t\t}\n" +
-                    "\t\t\tconst isDelete = message.responseData == null || (message.responseData.JsBridgeIsDelete == null || message.responseData.JsBridgeIsDelete);\n" +
+                    "\t\t\tconst messageResponseData = JSON.parse(message.responseData);\n" +
+                    "\t\t\tconst isDelete = message.responseData == null || (messageResponseData.JsBridgeIsDelete == null || messageResponseData.JsBridgeIsDelete);\n" +
                     "\t\t\tif (message.responseData != null) {\n" +
-                    "\t\t\t\tdelete message.responseData.JsBridgeIsDelete;\n" +
+                    "\t\t\t\tdelete messageResponseData.JsBridgeIsDelete;\n" +
                     "\t\t\t}\n" +
                     "\n" +
-                    "\t\t\tresponseCallback(message.responseData);\n" +
+                    "\t\t\tresponseCallback(messageResponseData);\n" +
                     "\t\t\tif (isDelete) {\n" +
                     "\t\t\t\tdelete responseCallbacks[message.responseId];\n" +
                     "\t\t\t}\n" +
@@ -195,4 +196,44 @@ public class JsBridgeInterface {
                     "\t\t}\n" +
                     "\t}\n" +
                     "})()";
+
+    public static final String PRO_JS = "(function() {\n" +
+            "    function generator(method) {\n" +
+            "        this[method] = function responseNoop(param) {\n" +
+            "            var p = param || {};\n" +
+            "            var successCallback = function (res) {\n" +
+            "                console.log('默认成功回调', method, res);\n" +
+            "            };\n" +
+            "            var failCallback = function (err) {\n" +
+            "                console.log('默认失败回调', method, err);\n" +
+            "            };\n" +
+            "            if (p.success) {\n" +
+            "                successCallback = p.success;\n" +
+            "                delete p.success;\n" +
+            "            }\n" +
+            "            if (p.fail) {\n" +
+            "                failCallback = p.fail;\n" +
+            "                delete p.fail;\n" +
+            "            }\n" +
+            "        \n" +
+            "            //统一回调处理\n" +
+            "            var callback = function (response) {\n" +
+            "                console.log('response:' + response);\n" +
+            "                const data = response || {};\n" +
+            "                console.log('data:' + data);\n" +
+            "                const status = data.status;\n" +
+            "                console.log('status:' + status);\n" +
+            "                const result = data.data;\n" +
+            "                console.log('result:' + result);\n" +
+            "                if (status >= 0) {\n" +
+            "                    successCallback && successCallback.call(null, result);\n" +
+            "                } else {\n" +
+            "                    failCallback && failCallback.call(null, result);\n" +
+            "                }\n" +
+            "            };\n" +
+            "        \n" +
+            "            window.JsBridge.callHandler(method, p, callback);\n" +
+            "        }\n" +
+            "    }\n\n" +
+            "%s\n})()";
 }

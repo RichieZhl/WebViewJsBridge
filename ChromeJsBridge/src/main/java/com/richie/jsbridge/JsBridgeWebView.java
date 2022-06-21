@@ -121,9 +121,9 @@ public class JsBridgeWebView extends WebView {
             public void onProgressChanged(WebView var1, int var2) {
                 if (var2 >= 20 && !loaded) {
                     loaded = true;
-                    evaluateJavascript(JsBridgeInterface.WVJB_JS, null);
+                    evaluateJavascript(JsBridgeInterface.JAVASCRIPT_STR + JsBridgeInterface.WVJB_JS, null);
                     if (customInjectedJs != null) {
-                        evaluateJavascript(customInjectedJs, null);
+                        evaluateJavascript(JsBridgeInterface.JAVASCRIPT_STR + customInjectedJs, null);
                     }
                 } else {
                     loaded = false;

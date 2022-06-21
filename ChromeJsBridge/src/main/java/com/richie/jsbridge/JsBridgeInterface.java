@@ -17,7 +17,7 @@ public class JsBridgeInterface {
     private final static String CALLBACK_ID_FORMAT = "JAVA_CB_%s";
     private final static String UNDERLINE_STR = "_";
     private final static String JS_HANDLE_MESSAGE_FROM_JAVA = "javascript:JsBridge._handleMessageFromNative('%s');";
-    private final static String JAVASCRIPT_STR = "javascript:";
+    public final static String JAVASCRIPT_STR = "javascript:";
 
     private final Map<String, CallBackFunction> responseCallbacks = new HashMap<>();
 

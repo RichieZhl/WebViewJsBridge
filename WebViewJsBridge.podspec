@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WebViewJsBridge'
-  s.version          = '0.1.0'
+  s.version          = '0.1.3'
   s.summary          = 'webview js bridge'
 
   s.description      = <<-DESC
@@ -21,7 +21,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/RichieZhl/WebViewJsBridge.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'WebViewJsBridge/Classes/**/*'
   

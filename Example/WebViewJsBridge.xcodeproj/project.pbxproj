@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43E60BF32861D03400E88B4B /* ZLWidgetDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E60BF22861D03400E88B4B /* ZLWidgetDemo.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43E60BF12861D03400E88B4B /* ZLWidgetDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLWidgetDemo.h; sourceTree = "<group>"; };
+		43E60BF22861D03400E88B4B /* ZLWidgetDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLWidgetDemo.m; sourceTree = "<group>"; };
 		447F9A7C86A10574CB53C90A /* Pods-WebViewJsBridge_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewJsBridge_Example.debug.xcconfig"; path = "Target Support Files/Pods-WebViewJsBridge_Example/Pods-WebViewJsBridge_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* WebViewJsBridge_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewJsBridge_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,15 +61,15 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		636E3643D312EBC689083A34 /* Pods_WebViewJsBridge_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebViewJsBridge_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6641523D8062541D2E0F628A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		6641523D8062541D2E0F628A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9908A6D3D76289D88BD9A83F /* Pods-WebViewJsBridge_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewJsBridge_Example.release.xcconfig"; path = "Target Support Files/Pods-WebViewJsBridge_Example/Pods-WebViewJsBridge_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C5999E78D2DC8063781F572E /* Pods_WebViewJsBridge_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebViewJsBridge_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD3F39DC3486A0DCABBF9A6B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		CD3F39DC3486A0DCABBF9A6B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F0C63188639785B87919822A /* Pods-WebViewJsBridge_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewJsBridge_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WebViewJsBridge_Tests/Pods-WebViewJsBridge_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA7E09E9E166F475C206FD5E /* Pods-WebViewJsBridge_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewJsBridge_Tests.release.xcconfig"; path = "Target Support Files/Pods-WebViewJsBridge_Tests/Pods-WebViewJsBridge_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		FDDE6FD15A49F3B1D5B957CC /* WebViewJsBridge.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = WebViewJsBridge.podspec; path = ../WebViewJsBridge.podspec; sourceTree = "<group>"; };
+		FDDE6FD15A49F3B1D5B957CC /* WebViewJsBridge.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WebViewJsBridge.podspec; path = ../WebViewJsBridge.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* ZLViewController.h */,
 				6003F5A6195388D20070C39A /* ZLViewController.m */,
+				43E60BF12861D03400E88B4B /* ZLWidgetDemo.h */,
+				43E60BF22861D03400E88B4B /* ZLWidgetDemo.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -193,7 +198,6 @@
 				F0C63188639785B87919822A /* Pods-WebViewJsBridge_Tests.debug.xcconfig */,
 				FA7E09E9E166F475C206FD5E /* Pods-WebViewJsBridge_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +262,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -364,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43E60BF32861D03400E88B4B /* ZLWidgetDemo.m in Sources */,
 				6003F59E195388D20070C39A /* ZLAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* ZLViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

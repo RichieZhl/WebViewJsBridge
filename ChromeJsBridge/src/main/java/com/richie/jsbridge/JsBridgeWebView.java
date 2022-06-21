@@ -150,9 +150,6 @@ public class JsBridgeWebView extends WebView {
         WebSettings settings = getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
-        if (BuildConfig.DEBUG) {
-            WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG);
-        }
 
         JsBridgeInterface jsBridgeInterface = new JsBridgeInterface(this, activity);
         addJavascriptInterface(jsBridgeInterface, "Android");

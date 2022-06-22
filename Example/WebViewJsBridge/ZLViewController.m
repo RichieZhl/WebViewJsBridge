@@ -8,7 +8,7 @@
 
 #import "ZLViewController.h"
 #import <WebViewJsBridge/JsWebViewBuilder.h>
-#import <WebViewJsBridge/JsWidgetCollections.h>>
+#import <WebViewJsBridge/JsWidgetCollections.h>
 
 @interface ZLViewController () <WKNavigationDelegate>
 

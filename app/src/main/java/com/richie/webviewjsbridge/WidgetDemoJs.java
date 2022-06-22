@@ -1,5 +1,6 @@
 package com.richie.webviewjsbridge;
 
+import android.app.Activity;
 import com.richie.jsbridge.JsBaseBridgeWidget;
 import com.richie.jsbridge.CallBackFunction;
 
@@ -11,7 +12,7 @@ import java.util.Map;
  */
 public class WidgetDemoJs extends JsBaseBridgeWidget {
     @Override
-    public void perform(Map<String, Object> data, CallBackFunction function) {
+    public void perform(Activity activity, Map<String, Object> data, CallBackFunction function) {
         System.out.println(data);
         successNotRemoveResponseId(Collections.singletonMap("a", true), function);
         success("asffa", function);

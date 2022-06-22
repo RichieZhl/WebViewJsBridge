@@ -24,6 +24,7 @@ public class JsBridgeWebView extends WebView {
 
     private JsBridgeInterface jsBridgeInterface;
 
+    private String mNamespace;
     private String customInjectedJs;
 
     private BridgeWebViewHandler bridgeWebViewHandler;
@@ -135,9 +136,10 @@ public class JsBridgeWebView extends WebView {
             public void onProgressChanged(WebView var1, int var2) {
                 if (var2 >= 20 && !loaded) {
                     loaded = true;
-                    evaluateJavascript(JsBridgeInterface.WVJB_JS, null);
+                    evaluateJavascript(JsBridgeInterface.JAVASCRIPT_STR + JsBridgeInterface.WVJB_JS, null);
+                    evaluateJavascript(JsBridgeInterface.JAVASCRIPT_STR + String.format(JsBridgeInterface.PRO_JS, JsWidgetCollections.getInstance().gen(mNamespace)), null);
                     if (customInjectedJs != null) {
-                        evaluateJavascript(customInjectedJs, null);
+                        evaluateJavascript(JsBridgeInterface.JAVASCRIPT_STR + customInjectedJs, null);
                     }
                 } else {
                     loaded = false;
@@ -163,6 +165,7 @@ public class JsBridgeWebView extends WebView {
 
         WebSettings settings = getSettings();
         settings.setJavaScriptEnabled(true);
+        settings.setDomStorageEnabled(true);
 
         JsBridgeInterface jsBridgeInterface = new JsBridgeInterface(this, activity);
         addJavascriptInterface(jsBridgeInterface, "Android");

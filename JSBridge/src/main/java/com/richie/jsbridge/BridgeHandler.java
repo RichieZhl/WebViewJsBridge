@@ -1,5 +1,7 @@
 package com.richie.jsbridge;
 
+import android.app.Activity;
+
 public interface BridgeHandler {
-    void handler(String data, CallBackFunction function);
+    void handler(Activity activity, String data, CallBackFunction function);
 }

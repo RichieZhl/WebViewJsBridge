@@ -71,12 +71,12 @@ class JsBridgeInterface {
             if (!TextUtils.isEmpty(m.getHandlerName())) {
                 handler = messageHandlers.get(m.getHandlerName());
             } else {
-                handler = (data, function) -> {
+                handler = (activity, data, function) -> {
 
                 };
             }
             if (handler != null){
-                handler.handler(m.getData(), responseFunction);
+                handler.handler(mActivity.get(), m.getData(), responseFunction);
             }
         }
     }

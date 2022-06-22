@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (BuildConfig.DEBUG) {
+            WebView.setWebContentsDebuggingEnabled(true);
+        }
         JsBridgeWebView webView = findViewById(R.id.webview);
         webView.setUp(this, "eren", null);
         JsWidgetCollections.getInstance().registerWidget("navigateTo", WidgetDemoJs.class);
